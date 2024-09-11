@@ -1,0 +1,13 @@
+[package]
+name = "tokio-slow-read-issue"
+version = "0.1.0"
+edition = "2021"
+
+[profile.release]
+debug = true
+panic = "abort"
+
+[dependencies]
+tokio = { version = "1", features = ["rt-multi-thread", "fs", "io-util"] }
+tokio-util = { version = "0.7", features = ["io"] }
+futures-util = { version = "0.3" }
